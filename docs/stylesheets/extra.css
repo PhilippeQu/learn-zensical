@@ -1,0 +1,88 @@
+/* 多级标题样式区分 */
+
+/* H1 - 主标题：底部边框 */
+.md-content h1 {
+    border-bottom: 3px solid var(--md-primary-fg-color);
+    padding-bottom: 0.3em;
+}
+
+/* H2 - 章节标题：左侧粗竖线 + 浅色渐变背景 */
+.md-content h2 {
+    position: relative;
+    padding: 0.15em 0.6em;
+    margin-top: 1.5em;
+    border-left: 5px solid var(--md-primary-fg-color);
+}
+
+.md-content h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, var(--md-primary-fg-color) 0%, transparent 50%);
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* H3 - 小节标题：左侧细竖线 */
+.md-content h3 {
+    border-left: 3px solid var(--md-accent-fg-color);
+    padding-left: 0.6em;
+    margin-top: 1.2em;
+}
+
+/* H4 - 小标题：大菱形符号 */
+.md-content h4 {
+    margin-top: 1em;
+    padding-left: 1em;
+    position: relative;
+}
+
+.md-content h4::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    color: var(--md-primary-fg-color);
+    font-size: 0.55em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* H5 - 细节标题：小菱形符号 */
+.md-content h5 {
+    margin-top: 0.8em;
+    padding-left: 1em;
+    position: relative;
+    color: var(--md-default-fg-color--light);
+}
+
+.md-content h5::before {
+    content: "◇";
+    position: absolute;
+    left: 0;
+    color: var(--md-accent-fg-color);
+    font-size: 0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* H6 - 备注标题：圆点符号 */
+.md-content h6 {
+    margin-top: 0.6em;
+    padding-left: 1em;
+    position: relative;
+    color: var(--md-default-fg-color--light);
+}
+
+.md-content h6::before {
+    content: "•";
+    position: absolute;
+    left: 0.1em;
+    color: var(--md-default-fg-color--lighter);
+    font-size: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+}
